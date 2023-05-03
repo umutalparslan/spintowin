@@ -77,7 +77,7 @@
             J = new RegExp("\\\\[\\da-fA-F]{1,6}[\\x20\\t\\r\\n\\f]?|\\\\([^\\r\\n\\f])", "g"),
             Z = function(e, t) { var n = "0x" + e.slice(1) - 65536; return t || (n < 0 ? String.fromCharCode(n + 65536) : String.fromCharCode(n >> 10 | 55296, 1023 & n | 56320)) },
             ee = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\0-\x1f\x7f-\uFFFF\w-]/g,
-            te = function(e, t) { return t ? "\0" === e ? "�" : e.slice(0, -1) + "\\" + e.charCodeAt(e.length - 1).toString(16) + " " : "\\" + e },
+            te = function(e, t) { return t ? "\0" === e ? "ï¿½" : e.slice(0, -1) + "\\" + e.charCodeAt(e.length - 1).toString(16) + " " : "\\" + e },
             ne = function() { f() },
             re = function(e, t, n) { var r = t.dir,
                     i = t.next,
@@ -2043,17 +2043,6 @@ SpinToWin.prototype.resultHandler = function(res) {
         this.couponCode.value = res.name
     }
     this.handleVisibility()
-    var circleLine = document.querySelector("#wheel-container > div > div.eWheel-inner > div.eWheel > div.eWheel-bg-layer > svg > circle:nth-child(3)");
-    var svgPath = document.querySelector("#wheel-container > div > div.eWheel-inner > div.eWheel > div.eWheel-bg-layer > svg");
-    var bigPath = document.querySelector("#wheel-container > div > div.eWheel-inner > div.eWheel > div.eWheel-bg-layer > svg > g.ew-slicesGroup > path.ew-current");
-    svgPath.insertBefore(circleLine, svgPath.firstChild);
-    bigPath.style.transformOrigin = "center";
-    bigPath.style.transform = "scale(1.3) translateX(-1px) translateY(3px)";
-    bigPath.setAttribute("stroke", "#000");
-    bigPath.setAttribute("stroke-width", "3");
-    document.querySelector("#wheel-container > div > div.eWheel-marker").setAttribute("style", "margin-top: 0 !important;transform: rotate(0deg);");
-    document.querySelector("#wheel-container > div > div.eWheel-inner > div.eWheel > div.eWheel-bg-layer > svg > circle.centerCircle").setAttribute("r", "30");
-    document.querySelector("#wheel-container > div > div.eWheel-inner > div.eWheel-center > img").style.width = "23%";
 }; //Helper functions
 SpinToWin.prototype.breakString = function(str, limit) {
     let brokenString = "";

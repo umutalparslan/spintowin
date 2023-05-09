@@ -2877,30 +2877,30 @@ SpinToWin.prototype.spinHandler = function(result) {
 SpinToWin.prototype.resultHandler = function(res) {
     this.spinCompleted = true;
     if (this.won) {
-        this.promocodeTitleElement.innerHTML = this.promocodeTitleElement.innerHTML + "<br/>" + res.name;
+        this.promocodeTitleElement.innerHTML = this.promocodeTitleElement.innerHTML;
         this.couponCode.innerText = res.code;
         this.couponCode.value = res.code
     } else {
-        this.promocodeTitleElement.innerHTML = this.promocodeTitleElement.innerHTML + "<br/>" + res.name;
+        this.promocodeTitleElement.innerHTML = this.promocodeTitleElement.innerHTML;
         this.couponCode.innerText = res.name;
         this.couponCode.value = res.name
     }
     this.handleVisibility()
     console.log("SliceTransform Çalıştı");
-    var circleLine = document.querySelector("#wheel-container > div > div.eWheel-inner > div.eWheel > div.eWheel-bg-layer > svg > circle:nth-child(3)");
+    var circleLine = document.querySelector(".eWheel-bg-layer > svg > circle:nth-child(3)");
     console.log(circleLine);
-    var svgPath = document.querySelector("#wheel-container > div > div.eWheel-inner > div.eWheel > div.eWheel-bg-layer > svg");
+    var svgPath = document.querySelector(".eWheel-bg-layer > svg");
     console.log(svgPath);
-    var bigPath = document.querySelector("#wheel-container > div > div.eWheel-inner > div.eWheel > div.eWheel-bg-layer > svg > g.ew-slicesGroup > path.ew-current");
+    var bigPath = document.querySelector(".ew-current");
     console.log(bigPath);
     svgPath.insertBefore(circleLine, svgPath.firstChild);
     bigPath.style.transformOrigin = "center";
-    bigPath.style.transform = "scale(1.3) translateX(-1px) translateY(3px)";
+    bigPath.style.transform = "scale(1.15) translateX(-1px) translateY(3px)";
     bigPath.setAttribute("stroke", "#000");
     bigPath.setAttribute("stroke-width", "3");
-    document.querySelector("#wheel-container > div > div.eWheel-marker").setAttribute("style", "margin-top: 0 !important;transform: rotate(0deg);");
-    document.querySelector("#wheel-container > div > div.eWheel-inner > div.eWheel > div.eWheel-bg-layer > svg > circle.centerCircle").setAttribute("r", "30");
-    document.querySelector("#wheel-container > div > div.eWheel-inner > div.eWheel-center > img").style.width = "23%";
+    document.querySelector("#Layer_1").setAttribute("style", "margin-top: -10px !important;transform: rotate(0deg);");
+    document.querySelector(".eWheel-bg-layer > svg > circle.centerCircle").setAttribute("r", "30");
+    document.querySelector(".eWheel-center > img").style.width = "23%";
     console.log("SliceTransform " + bigPath.style.transform);
 }; //Helper functions
 SpinToWin.prototype.breakString = function(str, limit) {

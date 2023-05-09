@@ -2897,6 +2897,7 @@ SpinToWin.prototype.resultHandler = function(res) {
     document.querySelector("#Layer_1").setAttribute("style", "margin-top: -10px !important;transform: rotate(0deg);");
     document.querySelector(".eWheel-bg-layer > svg > circle.centerCircle").setAttribute("r", "30");
     document.querySelector(".eWheel-center > img").style.width = "23%";
+
 }; //Helper functions
 SpinToWin.prototype.breakString = function(str, limit) {
     let brokenString = "";

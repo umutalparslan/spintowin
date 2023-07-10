@@ -2272,7 +2272,7 @@
 //# sourceMappingURL=hammer.min.js.map
 function Swiping(config) {
     this.config = config;
-    console.log("ResponseConfig: " + this.config);
+    console.log("ResponseConfig: " + this.config.title);
     var extendedProps = JSON.parse(decodeURIComponent(this.config.actiondata.ExtendedProps));
 
     //Global Head Variable
